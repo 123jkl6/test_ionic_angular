@@ -21,6 +21,7 @@ export class RecipeDetailPage implements OnInit {
   ) {}
 
   ngOnInit() {
+    console.log("ngOnInit() recipe-detail.page.ts");
     this.activatedRoute.paramMap.subscribe(paramMap => {
       if (!paramMap.has("recipeId")) {
         //redirect
@@ -47,7 +48,7 @@ export class RecipeDetailPage implements OnInit {
             text: "Delete",
             handler: () => {
               this.recipesService.deleteRecipe(this.loadedRecipe.id);
-              this.router.navigate(["/recipes"]);
+              this.router.navigate([""]);
             }
           }
         ]

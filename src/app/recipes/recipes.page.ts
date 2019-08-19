@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { Recipe } from "./recipe.model";
 import { RecipesService } from "./recipes.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-recipes",
@@ -11,10 +12,17 @@ import { RecipesService } from "./recipes.service";
 export class RecipesPage implements OnInit {
   recipes: Recipe[];
 
-  constructor(private recipesService: RecipesService) {}
+  constructor(
+    private recipesService: RecipesService,
+    private route: ActivatedRoute
+  ) {
+    route.params.subscribe(val => {
+      // put the code from `ngOnInit` here
+      console.log("ngOnInit() RecipesPage");
 
-  ngOnInit() {
-    console.log("ngOnInit() RecipesPage");
-    this.recipes = this.recipesService.getAllRecipes();
+      this.recipes = this.recipesService.getAllRecipes();
+    });
   }
+
+  ngOnInit() {}
 }

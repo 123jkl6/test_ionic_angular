@@ -25,7 +25,7 @@ export class RecipesService {
   constructor() {}
 
   getAllRecipes() {
-    return [...this.recipes];
+    return this.recipes;
   }
 
   getRecipe(recipeId: string) {
