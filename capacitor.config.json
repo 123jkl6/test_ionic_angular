@@ -1,0 +1,7 @@
+{
+  "appId": "com.nicholas.test.ionic.angular",
+  "appName": "test_ionic_angular",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

@@ -18,7 +18,7 @@ export class RecipesPage implements OnInit {
   ) {
     route.params.subscribe(val => {
       // put the code from `ngOnInit` here
-      console.log("ngOnInit() RecipesPage");
+      console.log("constructor() RecipesPage");
 
       this.recipes = this.recipesService.getAllRecipes();
     });
